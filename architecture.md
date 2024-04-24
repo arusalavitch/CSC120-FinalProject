@@ -1,28 +1,28 @@
 Architecture Diagram:
 
           +---------------------+
-          |       main.py       |
+          |       main.java       |
           +---------------------+
                    |
           +---------------------+
-          |      player.py      |
-          |      room.py        |
-          |      object.py      |
-          |      puzzle.py      |
-          |      item.py        |
-          |      achievement.py |
-          |      interaction.py |
+          |      player.java      |
+          |      room.java        |
+          |      object.java      |
+          |      puzzle.java      |
+          |      item.java        |
+          |      achievement.java |
+          |      interaction.java |
           +---------------------+
                    |
           +---------------------+
-          |       utils.py      |
-          |     constants.py    |
-          |    exceptions.py    |
+          |       utils.java      |
+          |     constants.java    |
+          |    exceptions.java    |
           +---------------------+
                    |
           +---------------------+
-          |      rooms.json     |
-          |     puzzles.json    |
-          |      items.json     |
-          |  achievements.json  |
+          |      rooms.md       |
+          |     puzzles.md      |
+          |      items.md       |
+          |  achievements.md    |
           +---------------------+

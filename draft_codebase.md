@@ -1,21 +1,21 @@
 Draft Codebase Overview:
 
 1. Main File:
-   - main.py
+   - main.java
    
 2. Game Components:
-   - player.py (defines the Player class)
-   - room.py (defines the Room class)
-   - object.py (defines the Object class)
-   - puzzle.py (defines the Puzzle class)
-   - item.py (defines the Item class)
+   - player. (defines the Player class)
+   - room.java (defines the Room class)
+   - object.java (defines the Object class)
+   - puzzle.java (defines the Puzzle class)
+   - item.java (defines the Item class)
    - achievement.py (defines the Achievement class)
-   - interaction.py (defines the Interaction class)
+   - interaction.java (defines the Interaction class)
 
 3. Utility Modules:
-   - utils.py (contains utility functions)
-   - constants.py (contains game constants)
-   - exceptions.py (contains custom exceptions)
+   - utils.java (contains utility functions)
+   - constants.java (contains game constants)
+   - exceptions.java (contains custom exceptions)
 
 4. Data Files:
    - rooms.json (contains room descriptions and connections)
