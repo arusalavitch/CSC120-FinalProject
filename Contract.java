@@ -5,6 +5,11 @@ public interface Contract {
     void grab(String item);
     String drop(String item);
     void sniff(String item);
+    void drink();
+    boolean roll(int x, int y);
+    void climb(String item);
+    void bite(String item);
+    void attack(String item);
     void use(String item);
     boolean scurry(String direction);
     boolean jump(int x, int y);
