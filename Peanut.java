@@ -53,7 +53,37 @@ public class Peanut implements Contract {
         return "Move the gerbil."; // Placeholder input
     }
 
-     
+
+    private boolean isWheelRotated = false;
+
+    public void examineWheel() {
+        System.out.println("You see a large wheel with various symbols engraved on it.");
+        if (!isWheelRotated) {
+            System.out.println("The wheel seems to be stuck.");
+        } else {
+            System.out.println("The symbols on the wheel are now aligned.");
+        }
+    }
+
+    public void rotateWheel() {
+        if (!isWheelRotated) {
+            System.out.println("You give the wheel a strong push and it starts to rotate...");
+            // Assume the player needs to perform some actions to rotate the wheel, e.g., entering commands
+            String rotationSequence = getPlayerInput(); // Placeholder method to get player input
+            if (rotationSequence.equals("Spin")) { // Check if the player input matches the solution
+                System.out.println("The symbols on the wheel align perfectly!");
+                isWheelRotated = true;
+                // Trigger event, such as unlocking a door or revealing a hidden passage
+                System.out.println("A hidden passage opens up!");
+            } else {
+                System.out.println("The symbols on the wheel do not align.");
+            }
+        } else {
+            System.out.println("The wheel has already been rotated.");
+        }
+    }
+
+
     public void grab(String item) {
         System.out.println("Your tiny paws grabbed the " + item + ".");
         inventory.add(item);
