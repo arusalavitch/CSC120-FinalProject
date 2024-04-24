@@ -18,7 +18,7 @@ public interface Contract {
     void snooze();
     void undo();
     void solvePuzzle(String puzzleName, String solution);
-    void unlockAchievement(String achievementName);
+    void unlockRoom();
     void quitGame();
 }
     
