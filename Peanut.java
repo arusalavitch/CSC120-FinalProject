@@ -22,6 +22,37 @@ public class Peanut implements Contract {
         }
     }
 
+    private Puzzle puzzle;
+
+    public Peanut() {
+        puzzle = new Puzzle();
+    }
+
+    public void explore() {
+        // If the gerbil goes under the bed
+        if (gerbilGoesUnderBed()) {
+            System.out.println("You've entered the MAZE OF TUNNELS UNDER THE BED");
+            System.out.println("You must navigate through a series of obstacles...");
+            String solution = getPlayerInput(); // the player needs to input a specific command or sequence to solve the puzzle
+            if (puzzle.isSolved("Under Bed", solution)) {
+                System.out.println("Congratulations! You've successfully navigated the MAZE OF TUNNELS.");
+                // Proceed with game progression
+            } else {
+                System.out.println("You failed to navigate the MAZE OF TUNNELS. Try again!");
+            }
+        }
+    }
+
+    private boolean gerbilGoesUnderBed() {
+        // Logic to determine if the current room contains the Gerbil Gauntlet puzzle
+        return true; // Placeholder logic
+    }
+
+    private String getPlayerInput() {
+        // Example: Prompt the player to input a command or sequence to solve the puzzle
+        return "Move the gerbil."; // Placeholder input
+    }
+
      
     public void grab(String item) {
         System.out.println("Your tiny paws grabbed the " + item + ".");
