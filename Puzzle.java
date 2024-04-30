@@ -22,7 +22,6 @@ public class Puzzle {
         return puzzles.containsKey(puzzleName) && puzzles.get(puzzleName).equalsIgnoreCase(solution);
     }
 
-
 public void maze() {
     //maze.key = {right, left, left, right};
     //String maze = "" ;
@@ -68,5 +67,6 @@ public void maze() {
                 }
     input.close();
     }
+}
 
 }}
