@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner
 
 public class Puzzle {
 
@@ -16,5 +17,15 @@ public class Puzzle {
 
     public boolean isSolved(String puzzleName, String solution) {
         return puzzles.containsKey(puzzleName) && puzzles.get(puzzleName).equalsIgnoreCase(solution);
+    }
+}
+
+public void maze() {
+    maze.key = {right, left, left, right, left, left}
+    while (maze != "Completed!") {
+        System.out.println("Where does the gerbil want to go? Left or right?");
+        Scanner input = new Scanner();
+        if ()
+
     }
 }
