@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner
+import java.util.Scanner;
 
 public class Puzzle {
 
@@ -18,7 +18,6 @@ public class Puzzle {
     public boolean isSolved(String puzzleName, String solution) {
         return puzzles.containsKey(puzzleName) && puzzles.get(puzzleName).equalsIgnoreCase(solution);
     }
-}
 
 public void maze() {
     maze.key = {right, left, left, right, left, left}
@@ -28,4 +27,6 @@ public void maze() {
         if ()
 
     }
+}
+
 }
