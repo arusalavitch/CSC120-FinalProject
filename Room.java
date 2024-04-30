@@ -1,21 +1,25 @@
 public class Room {
-    private String description;
+    private String name;
     private boolean isLocked;
     private Puzzle puzzle;
     
-    public Room(String description) {
-        this.description = description;
+    public Room(String name, boolean isLocked, Puzzle puzzle) {
+        this.name = name;
         isLocked = true;
         puzzle = null;
     }
     
     // Getters and setters for description, isLocked, and puzzle
     public String getDescription() {
-        return description;
+        return "You are currently in your "+name+".";
     }
     
-    public boolean isLocked() {
-        return isLocked;
+    public String isLocked() {
+        if (isLocked){
+            return "The "+name+ " is currently locked";
+        }else{
+            return "You've unlocked the "+name+".";
+        }
     }
     
     public void setLocked(boolean locked) {
