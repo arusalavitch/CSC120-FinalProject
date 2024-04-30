@@ -1,8 +1,11 @@
 public class main {
-    Peanut Peanut = new Peanut();
+    Peanut peanut = new Peanut();
     Puzzle puzzle = new Puzzle();
-    Room Room = new Room();
+    Room Room = new Room(null);
 
+    peanut.startGame();
+
+    
 }
 
 
