@@ -8,6 +8,11 @@ public class Peanut implements Contract {
      
     public void startGame() {
         System.out.println("Welcome to Peanut's adventure!");
+        System.out.println( "Your name is Peanut, you are a gerbil who has been living in the dorm room of a college student for a long four years.");
+        System.out.println("Over the last few week, as your owner gears up for graduation, you have realized that you may never get the chance to see outside into the world of Smith College ever again.");
+        System.out.println("Tired of the monotony of cage life, you hatch a plan to escape and explore the world beyond your cage.");
+        System.out.println("Your objective is to break out of the cage and explore, solving puzzles, overcoming obstacles, and finding a way to freedom.");
+        System.out.println("Get ready to navigate through various challenges and puzzles as you embarks on a daring adventure to explore Smith College");
     }
 
      
