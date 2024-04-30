@@ -1,11 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner
+import java.util.Scanner;
 
 public class Puzzle {
 
     private Map<String, String> puzzles;
-
+    public static void main(String[] args)
+    {
+    
+    
     public Puzzle() {
         puzzles = new HashMap<>();
 
@@ -18,14 +21,52 @@ public class Puzzle {
     public boolean isSolved(String puzzleName, String solution) {
         return puzzles.containsKey(puzzleName) && puzzles.get(puzzleName).equalsIgnoreCase(solution);
     }
-}
+
 
 public void maze() {
-    maze.key = {right, left, left, right, left, left}
-    while (maze != "Completed!") {
+    //maze.key = {right, left, left, right};
+    //String maze = "" ;
+    Integer maze_position = 0;
+    while (!maze_position.equals(5)) {
+        maze_position += 1;
         System.out.println("Where does the gerbil want to go? Left or right?");
-        Scanner input = new Scanner();
-        if ()
+        Scanner input = new Scanner(System.in);
+        String direction = input.nextLine();
+        if (direction.equalsIgnoreCase("right") && maze_position == 1){
+            System.out.println("Good choice, you have made it to the next intersection");
+            System.out.println("Where does the gerbil want to go? Left or right?");
+            maze_position += 1;
+        }
+        else{
+            maze_position -= 1;
+        }
 
+            if (direction.equalsIgnoreCase("left") && maze_position == 2){
+            System.out.println("Good choice, you have made it to the next intersection");
+            System.out.println("Where does the gerbil want to go? Left or right?");
+            maze_position += 1;
+            }
+            else{
+            maze_position -= 1;
+            }
+                if (direction.equalsIgnoreCase("left") && maze_position ==3){
+                System.out.println("Good choice, you have made it to the next intersection");
+                System.out.println("Where does the gerbil want to go? Left or right?");
+                maze_position += 1;
+                }
+                else{
+                maze_position -= 1;
+                }
+        
+                if (direction.equalsIgnoreCase("right") && maze_position ==4){
+                    System.out.println("Congrats! You have made it to the end of the maze!");
+                    //maze = "Completed!";
+                    maze_position +=1;
+                }
+                else{
+                maze_position -= 1;
+                }
+    input.close();
     }
-}
+
+}}
