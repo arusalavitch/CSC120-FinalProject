@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Puzzle {
 
     private Map<String, String> puzzles;
-    public static void main(String[] args)
-    {
+   
+    
     
     
     public Puzzle() {
@@ -65,8 +65,9 @@ public void maze() {
                 else{
                 maze_position -= 1;
                 }
-    input.close();
+            input.close();
     }
-}
 
-}}
+
+}
+    }
