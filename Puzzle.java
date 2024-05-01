@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.*;
 
 public class Puzzle {
 
@@ -23,51 +24,114 @@ public class Puzzle {
     }
 
 public void maze() {
-    //maze.key = {right, left, left, right};
-    //String maze = "" ;
-    Integer maze_position = 0;
-    while (!maze_position.equals(5)) {
-        maze_position += 1;
-        System.out.println("Where does the gerbil want to go? Left or right?");
+    
+        String[] directions = {"right", "left", "left", "right"};
+        int maze_position = 0;
         Scanner input = new Scanner(System.in);
-        String direction = input.nextLine();
-        if (direction.equalsIgnoreCase("right") && maze_position == 1){
-            System.out.println("Good choice, you have made it to the next intersection");
+
+        while (maze_position < directions.length) {
             System.out.println("Where does the gerbil want to go? Left or right?");
-            maze_position += 1;
-        }
-        else{
-            maze_position -= 1;
+            String direction = input.nextLine();
+            if (direction.equalsIgnoreCase(directions[maze_position])) {
+                maze_position++;
+                if (maze_position < directions.length) {
+                    System.out.println("Good choice, you have made it to the next intersection");
+                } else {
+                    System.out.println("Congrats! You have made it to the end of the maze! You found a piece of cheese!");
+                    // Implement the inventory method here to add cheese:
+                }
+            } else {
+                System.out.println("Oops! Wrong way. Try again!");
+            }
         }
 
-            if (direction.equalsIgnoreCase("left") && maze_position == 2){
-            System.out.println("Good choice, you have made it to the next intersection");
-            System.out.println("Where does the gerbil want to go? Left or right?");
-            maze_position += 1;
-            }
-            else{
-            maze_position -= 1;
-            }
-                if (direction.equalsIgnoreCase("left") && maze_position ==3){
-                System.out.println("Good choice, you have made it to the next intersection");
-                System.out.println("Where does the gerbil want to go? Left or right?");
-                maze_position += 1;
-                }
-                else{
-                maze_position -= 1;
-                }
-        
-                if (direction.equalsIgnoreCase("right") && maze_position ==4){
-                    System.out.println("Congrats! You have made it to the end of the maze!");
-                    //maze = "Completed!";
-                    maze_position +=1;
-                }
-                else{
-                maze_position -= 1;
-                }
-            input.close();
+        input.close();
     }
 
+public void wheel() {
 
+    Scanner scanner = new Scanner(System.in);
+    int goalRotations = 5; // The wheel needs 5 clockwise rotations to open the door
+    int currentRotations = 0;
+
+    System.out.println("Help the gerbil open the door by rotating the wheel!");
+    System.out.println("Spin the wheel clockwise 5 times to unlock the door.");
+
+    while (currentRotations < goalRotations) {
+        System.out.print("Enter rotation direction ('clockwise' or 'counterclockwise'): ");
+        String direction = scanner.nextLine();
+
+        if (direction.equalsIgnoreCase("clockwise")) {
+            currentRotations++;
+            System.out.println("Good! " + (goalRotations - currentRotations) + " more clockwise rotations needed.");
+        } else if (direction.equalsIgnoreCase("counterclockwise")) {
+            currentRotations = Math.max(0, currentRotations - 1); // Prevent negative rotations
+            System.out.println("Oh no! The wheel moved in the wrong direction. Now you need " +
+                               (goalRotations - currentRotations) + " more clockwise rotations.");
+        } else {
+            System.out.println("Invalid input. Please enter 'clockwise' or 'counterclockwise'.");
+        }
+    }
+
+    System.out.println("Congratulations! The door is unlocked, and the gerbil can escape.");
+    scanner.close();
 }
+
+public void navigateTunnels() {
+    Scanner scanner = new Scanner(System.in);
+    
+    // Tunnels identified by their names
+    List<String> tunnels = new ArrayList<>();
+    tunnels.add("Tunnel 1"); // index 0
+    tunnels.add("Tunnel 2"); // index 1
+    tunnels.add("Tunnel 3"); // index 2
+    tunnels.add("Exit Tunnel"); // index 3
+    
+    // Connections between tunnels represented as adjacency matrix or similar structure
+    int[][] exits = new int[][]{
+        {1, 2},    // Exits from Tunnel 1
+        {0, 3},    // Exits from Tunnel 2
+        {0},       // Exits from Tunnel 3
+        {}         // Exits from Exit Tunnel
+    };
+    
+    int currentTunnel = 0; // Starting at Tunnel 1
+
+    System.out.println("Help the gerbil find the exit of this Under-The-Bed Tunnel Network!");
+    while (!tunnels.get(currentTunnel).equals("Exit Tunnel")) {
+        System.out.println("You are in " + tunnels.get(currentTunnel) + ". There are exits to the following tunnels:");
+
+        for (int exit : exits[currentTunnel]) {
+            System.out.println((exit + 1) + ": " + tunnels.get(exit));
+        }
+
+        System.out.print("Which tunnel do you want to enter? Choose a number: ");
+        int choice = scanner.nextInt() - 1; // Convert to 0-based index
+
+        if (choice >= 0 && contains(exits[currentTunnel], choice)) {
+            currentTunnel = choice;
+        } else {
+            System.out.println("Invalid choice, try again.");
+        }
     }
+
+    System.out.println("Congratulations! You've helped the gerbil find the exit of this Under-The-Bed Tunnel Network.");
+    scanner.close();
+}
+
+private boolean contains(int[] array, int value) {
+    for (int i : array) {
+        if (i == value) {
+            return true;
+        }
+    }
+    return false;
+}
+}
+       
+
+
+   
+    
+
+    
