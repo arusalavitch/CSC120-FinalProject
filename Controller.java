@@ -33,6 +33,7 @@ public class Controller {
         commands.add("use");
         commands.add("snooze");
         commands.add("undo");
+        commands.add("");
 
         while (!puzzleCageSolved) {
             if (commands.contains(responseCage)) {
@@ -110,6 +111,8 @@ public class Controller {
                         peanut.undo();
                         responseCage = "";
                         break;
+                    case "":
+                        break;
                 }
             } else {
                 System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.");
@@ -136,6 +139,7 @@ public class Controller {
                         peanut.grab(itemToGrab);
                         peanut.poop();
                         System.out.println(itemToGrab + " has been added to your inventory!");
+                        responseCage = "";
                         break;
                     case "drop":
                         System.out.println("What do you want to drop from your inventory?");
@@ -147,11 +151,13 @@ public class Controller {
                             System.out.println("You don't have " + itemToDrop + " in your inventory.");
                             peanut.poop();
                         }
+                        responseCage = "";
                         break;
                     case "sniff":
                         System.out.println("What do you want to sniff?");
                         String itemToSniff = sc.nextLine();
                         peanut.sniff(itemToSniff);
+                        responseCage = "";
                         break;
                     case "drink":
                         peanut.drink();
@@ -163,9 +169,11 @@ public class Controller {
                         int yCoord = sc.nextInt();
                         peanut.roll(xCoord, yCoord);
                         peanut.poop();
+                        responseCage = "";
                         break;
                     case "climb":
                         System.out.println("You cannot climb in the dorm room.");
+                        responseCage = "";
                         break;
                     case "solve":
                         System.out.println("Attempting to solve the puzzle...");
@@ -177,18 +185,25 @@ public class Controller {
                             peanut.poop();
                             System.out.println("You failed to solve the maze puzzle. Try again!");
                         }
+                        responseCage = "";
                         break;
                     case "use":
                         System.out.println("What would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
                         peanut.poop();
+                        responseCage = "";
                         break;
                     case "snooze":
                         peanut.snooze();
+                        responseCage = "";
                         break;
                     case "undo":
                         peanut.undo();
+                        responseCage = "";
+                        break;
+                    case "":
+
                         break;
                 }
             } else {
@@ -215,6 +230,7 @@ public class Controller {
                         peanut.grab(itemToGrab);
                         peanut.poop();
                         System.out.println(itemToGrab + " has been added to your inventory!");
+                        responseCage = "";
                         break;
                     case "drop":
                         System.out.println("What do you want to drop from your inventory?");
@@ -226,15 +242,18 @@ public class Controller {
                             System.out.println("You don't have " + itemToDrop + " in your inventory.");
                             peanut.poop();
                         }
+                        responseCage = "";
                         break;
                     case "sniff":
                         System.out.println("What do you want to sniff?");
                         String itemToSniff = sc.nextLine();
                         peanut.sniff(itemToSniff);
                         peanut.eat();
+                        responseCage = "";
                         break;
                     case "drink":
                         peanut.drink();
+                        responseCage = "";
                         break;
                     case "roll":
                         System.out.println("Enter x coordinate: ");
@@ -243,9 +262,11 @@ public class Controller {
                         int yCoord = sc.nextInt();
                         peanut.roll(xCoord, yCoord);
                         peanut.poop();
+                        responseCage = "";
                         break;
                     case "climb":
                         System.out.println("You cannot climb on campus unfortunately.");
+                        responseCage = "";
                         break;
                     case "solve":
                         System.out.println("Attempting to solve the puzzle...");
@@ -257,19 +278,25 @@ public class Controller {
                         } else {
                             System.out.println("You failed to navigate through the tunnels. Try again!");
                         }
+                        responseCage = "";
                         break;
                     case "use":
                         System.out.println("What would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
                         peanut.poop();
+                        responseCage = "";
                         break;
                     case "snooze":
                         peanut.eat();
                         peanut.snooze();
+                        responseCage = "";
                         break;
                     case "undo":
                         peanut.undo();
+                        responseCage = "";
+                        break;
+                    case "":
                         break;
                 }
             } else {
