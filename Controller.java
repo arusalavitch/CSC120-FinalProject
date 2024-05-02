@@ -36,7 +36,7 @@ public class Controller {
         commands.add("snooze");
         commands.add("undo");
 
-        while (!puzzleSolved) {
+        while (!puzzleCageSolved) {
             if (commands.contains(response)) {
                 switch (response) {
                     case "grab":
@@ -80,7 +80,7 @@ public class Controller {
                             System.out.println("Attempting to solve the puzzle...");
                             puzzleCage.wheel();
                             cage.setLocked(false);
-                            puzzleSolved = true;
+                            puzzleCageSolved = true;
                             System.out.println("Congratulations! You solved the puzzle and unlocked the cage!");
                         } else if (response4.equalsIgnoreCase("Cage")) {
                             System.out.println("You decide to explore more of the cage.");
@@ -112,7 +112,7 @@ public class Controller {
                 System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.");
             }
 
-            if (!puzzleSolved) {
+            if (!puzzleCageSolved) {
                 System.out.println("What would you like to do next? Remember, all commands should be entered in lowercase.");
                 response = sc.nextLine();
             }
