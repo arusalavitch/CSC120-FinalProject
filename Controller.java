@@ -20,7 +20,7 @@ public class Controller {
         System.out.println(cage.getDescription());
         System.out.println(cage.isLocked());
 
-        System.out.println("What would you like to do first?");
+        System.out.println( "\nWhat would you like to do first?");
         String responseCage = sc.nextLine();
 
         ArrayList<String> commands = new ArrayList<String>();
@@ -33,19 +33,20 @@ public class Controller {
         commands.add("use");
         commands.add("snooze");
         commands.add("undo");
-        commands.add("next");
+        commands.add("HELP");
 
         while (puzzleCageSolved !=true) {
             switch (responseCage) {
                     case "grab":
-                        System.out.println("What do you want to grab?");
+                        System.out.println( "\nWhat do you want to grab?");
                         String itemToGrab = sc.nextLine();
                         peanut.grab(itemToGrab);
                         System.out.println(itemToGrab + " has been added to your inventory!");
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "drop":
-                        System.out.println("What do you want to drop from your inventory?");
+                        System.out.println("\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
                         peanut.eat();
@@ -54,17 +55,20 @@ public class Controller {
                         } else {
                             System.out.println("You don't have " + itemToDrop + " in your inventory.");
                         }
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "sniff":
-                        System.out.println("What do you want to sniff?");
+                        System.out.println( "\nWhat do you want to sniff?");
                         String itemToSniff = sc.nextLine();
                         peanut.sniff(itemToSniff);
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "drink":
                         peanut.drink();
                         peanut.eat();
+                        System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "roll":
@@ -73,13 +77,14 @@ public class Controller {
                         System.out.println("Enter y coordinate: ");
                         int yCoord = sc.nextInt();
                         peanut.roll(xCoord, yCoord);
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "climb":
                         peanut.climb();
                         System.out.println("In the distance, you see the puzzle you must solve...");
                         System.out.println("The lock on your cage has somehow been connected to your wheel.\nIn order to open the cage, you must solve the puzzle.");
-                        System.out.println("Would you like to solve the puzzle now or keep moving around the cage? Please enter 'Puzzle' or 'Cage' to indicate what you would like to do next.");
+                        System.out.println("\nWould you like to solve the puzzle now or keep moving around the cage? Please enter 'Puzzle' or 'Cage' to indicate what you would like to do next.");
                         String response4 = sc.nextLine();
                         if (response4.equalsIgnoreCase("Puzzle")) {
                             System.out.println("Attempting to solve the puzzle...");
@@ -93,27 +98,40 @@ public class Controller {
                         } else {
                             System.out.println("Invalid response. Please enter 'Puzzle' or 'Cage'.");
                         }
-                        System.out.println("What would you like to do next?");
+                        System.out.println( "\nWhat would you like to do next?");
                         responseCage = sc.nextLine();
                         break;
                     case "use":
-                        System.out.println("What would you like to use?");
+                        System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
-                         
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseCage = sc.nextLine();
                         break;
                     case "snooze":
                         peanut.eat();
                         peanut.snooze();
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "undo":
                         peanut.undo();
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseCage = sc.nextLine();
+                        break;
+                    case "HELP":
+                        peanut.HELP();
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseCage = sc.nextLine();
+                        break;
+                    case "help":
+                        peanut.HELP();
+                        System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     default:
-                        System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.\n");
-                        System.out.println("What would you like to do next? \nPlease enter a new response:");
+                        System.out.println("\nPlease check your spelling and capitalization. That isn't something that you know how to do.\n");
+                        System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                 }
             
@@ -131,7 +149,7 @@ public class Controller {
             System.out.println(dormRoom.isLocked());
             switch (responseDorm) {
                     case "grab":
-                        System.out.println("What do you want to grab?");
+                        System.out.println( "\nWhat do you want to grab?");
                         String itemToGrab = sc.nextLine();
                         peanut.grab(itemToGrab);
                         peanut.poop();
@@ -139,7 +157,7 @@ public class Controller {
                          
                         break;
                     case "drop":
-                        System.out.println("What do you want to drop from your inventory?");
+                        System.out.println( "\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
                         if (droppedItem != null) {
@@ -151,7 +169,7 @@ public class Controller {
                          
                         break;
                     case "sniff":
-                        System.out.println("What do you want to sniff?");
+                        System.out.println( "\nWhat do you want to sniff?");
                         String itemToSniff = sc.nextLine();
                         peanut.sniff(itemToSniff);
                          
@@ -185,7 +203,7 @@ public class Controller {
                          
                         break;
                     case "use":
-                        System.out.println("What would you like to use?");
+                        System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
                         peanut.poop();
@@ -199,12 +217,15 @@ public class Controller {
                         peanut.undo();
                          
                         break;
-                    case "":
-
+                    case "HELP":
+                        peanut.HELP();
+                        break;
+                    case "help":
+                        peanut.HELP();
                         break;
                     default:
                             System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.");
-                            System.out.println("What would you like to do next? Please enter a new response:");
+                            System.out.println( "\nWhat would you like to do next? Please enter a new response:");
                             responseCage = sc.nextLine();
                 
         }
@@ -215,12 +236,12 @@ public class Controller {
             System.out.println(campus.getDescription());
             System.out.println(campus.isLocked());
 
-            System.out.println("What's next?");
+            System.out.println( "\nWhat's next?");
             String responseCampus = sc.nextLine();
 
             switch (responseCampus) {
                     case "grab":
-                        System.out.println("What do you want to grab?");
+                        System.out.println( "\nWhat do you want to grab?");
                         String itemToGrab = sc.nextLine();
                         peanut.grab(itemToGrab);
                         peanut.poop();
@@ -228,7 +249,7 @@ public class Controller {
                          
                         break;
                     case "drop":
-                        System.out.println("What do you want to drop from your inventory?");
+                        System.out.println( "\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
                         if (droppedItem != null) {
@@ -240,7 +261,7 @@ public class Controller {
                          
                         break;
                     case "sniff":
-                        System.out.println("What do you want to sniff?");
+                        System.out.println( "\nWhat do you want to sniff?");
                         String itemToSniff = sc.nextLine();
                         peanut.sniff(itemToSniff);
                         peanut.eat();
@@ -276,7 +297,7 @@ public class Controller {
                          
                         break;
                     case "use":
-                        System.out.println("What would you like to use?");
+                        System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
                         peanut.poop();
@@ -291,16 +312,21 @@ public class Controller {
                         peanut.undo();
                          
                         break;
-                    case "":
+                    case "HELP":
+                        peanut.HELP();
+                        break;
+                    case "help":
+                        peanut.HELP();
                         break;
                     default:
                         System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.");
-                        System.out.println("What would you like to do next? Please enter a new response:");
+                        System.out.println( "\nWhat would you like to do next? Please enter a new response:");
                         responseCage = sc.nextLine();
                 }
            
             
         System.out.println("You've successfully escaped from the campus!");
+        peanut.quitGame();
         sc.close();
         }
 

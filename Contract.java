@@ -14,6 +14,7 @@ public interface Contract {
     void undo();
     void unlockRoom();
     void quitGame();
+    void HELP();
 }
     
 
