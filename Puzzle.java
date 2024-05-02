@@ -1,19 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.*;
 
 public class Puzzle {
 
-    private Map<String, String> puzzles;
     public boolean isSolved;
-   
-    
-    
-    
-    public Puzzle() {
-        puzzles = new HashMap<>();
-    }
+
 
     public boolean setSolved(boolean done){
         isSolved = done;
@@ -52,7 +43,7 @@ public void wheel() {
     int currentRotations = 0;
 
     System.out.println("Help the gerbil open the door by rotating the wheel!");
-    System.out.println("Spin the wheel clockwise 5 times to unlock the door.");
+    System.out.println("Spin the wheel 5 times to unlock the door.");
 
     while (currentRotations < goalRotations) {
         System.out.print("Enter rotation direction ('clockwise' or 'counterclockwise'): ");
