@@ -6,13 +6,18 @@ import java.util.*;
 public class Puzzle {
 
     private Map<String, String> puzzles;
-
+    public boolean isSolved;
    
     
     
     
     public Puzzle() {
         puzzles = new HashMap<>();
+    }
+
+    public boolean setSolved(boolean done){
+        isSolved = done;
+        return isSolved;
     }
 
 public void maze() {

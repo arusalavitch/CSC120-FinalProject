@@ -11,7 +11,7 @@ public class Room {
     
     // Getters and setters for description, isLocked, and puzzle
     public String getDescription() {
-        return "You are currently in your "+name+".";
+        return "You are currently in the "+name+".";
     }
     
     public String isLocked() {
