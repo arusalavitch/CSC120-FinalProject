@@ -5,12 +5,12 @@ Architecture Diagram:
           +-----------------------+
                    |
           +-----------------------+
-          |      Peanut.java      |
-          |      room.java        |
-          |      object.java      |
-          |      puzzle.java      |
+          |      Peanut.java      |     
+          |      room.java        |     
+          |      object.java      | 
+          |      puzzle.java      | 
           |      achievement.java |
-          |      interaction.java |
+          |      interaction.java | 
           +-----------------------+
                    |
           +-----------------------+
@@ -23,5 +23,5 @@ Architecture Diagram:
           |      rooms.md         |
           |     puzzles.md        |
           |      items.md         |
-          |  achievements.md      |
+          |  achievements.md      |  
           +-----------------------+
