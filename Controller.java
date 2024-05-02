@@ -132,7 +132,19 @@ public class Controller {
             System.out.println("Please check your spelling and capitalization. That isn't something that you know how to do.");
         }
 
-        
+        System.out.println("What would you like to do next? Remember, all of the commands should be entered in lowercase please.");
+        String response7 = sc.nextLine();
+        System.out.println("Would you like to solve the puzzle now or keep moving around the cage? Please enter 'Puzzle' or 'Cage' to indicate what you would like to do next.");
+                        String response4 = sc.nextLine();
+                        peanut.poop();
+                        if (response4.equalsIgnoreCase("Puzzle")) {
+                            System.out.println("Attempting to solve the puzzle...");
+                            String solution = sc.nextLine();
+                            cage.getPuzzle().wheel();
+                            cage.setLocked(false);
+                            System.out.println("Congratulations! You solved the puzzle and unlocked the cage!");
+                            break;
+
         
 
 
