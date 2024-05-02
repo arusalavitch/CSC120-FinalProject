@@ -83,7 +83,7 @@ public class Controller {
                         break;
                     case "climb":
                         peanut.climb();
-                        System.out.println("In the distance, you see the puzzle you must solve...");
+                        System.out.println("In the distance, you see the puzzle you must solve...\n");
                         System.out.println("The lock on your cage has somehow been connected to your wheel.\nIn order to open the cage, you must solve the puzzle.");
                         System.out.println("\nWould you like to solve the puzzle now or keep moving around the cage? Please enter 'Puzzle' or 'Cage' to indicate what you would like to do next.");
                         String response4 = sc.nextLine();
@@ -144,13 +144,13 @@ public class Controller {
         Puzzle puzzleDormRoom = new Puzzle();
         dormRoom = new Room("Dorm Room", false, puzzleDormRoom);
 
+        System.out.println(dormRoom.getDescription());
+        System.out.println(dormRoom.isLocked());
+        
         System.out.println("What's next?");
         String responseDorm = sc.nextLine();
 
-        System.out.println(dormRoom.getDescription());
-        System.out.println(dormRoom.isLocked());
-
-        while (puzzleDormRoomSolved =false){
+        while (puzzleDormRoomSolved !=true){
             switch (responseDorm) {
                 case "grab":
                 System.out.println( "\nWhat do you want to grab?");
