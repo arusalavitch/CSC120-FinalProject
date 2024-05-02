@@ -51,11 +51,11 @@ public void wheel() {
 
         if (direction.equalsIgnoreCase("clockwise")) {
             currentRotations++;
-            System.out.println("Good! " + (goalRotations - currentRotations) + " more clockwise rotations needed.");
+            System.out.println("Good! " + (goalRotations - currentRotations) + " more rotations needed.");
         } else if (direction.equalsIgnoreCase("counterclockwise")) {
             currentRotations = Math.max(0, currentRotations - 1); // Prevent negative rotations
             System.out.println("Oh no! The wheel moved in the wrong direction. Now you need " +
-                               (goalRotations - currentRotations) + " more clockwise rotations.");
+                               (goalRotations - currentRotations) + " more rotations.");
         } else {
             System.out.println("Invalid input. Please enter 'clockwise' or 'counterclockwise'.");
         }
