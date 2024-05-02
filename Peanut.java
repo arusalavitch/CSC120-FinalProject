@@ -72,26 +72,7 @@ public class Peanut implements Contract {
         }
     }
 
-    public void rotateWheel() {
-        if (!isWheelRotated) {
-            System.out.println("You give the wheel a strong push and it starts to rotate...");
-            // Assume the player needs to perform some actions to rotate the wheel, e.g., entering commands
-            String rotationSequence = getPlayerInput(); // Placeholder method to get player input
-            if (rotationSequence.equals("Spin")) { // Check if the player input matches the solution
-                System.out.println("The symbols on the wheel align perfectly!");
-                isWheelRotated = true;
-                // Trigger event, such as unlocking a door or revealing a hidden passage
-                System.out.println("A hidden passage opens up!");
-            } else {
-                System.out.println("The symbols on the wheel do not align.");
-            }
-        } else {
-            System.out.println("The wheel has already been rotated.");
-        }
-    }
-
-
-    public void grab(String item) {
+    public void grab (String item) {
         System.out.println("Your tiny paws grabbed the " + item + ".");
         inventory.add(item);
     }
@@ -123,18 +104,8 @@ public class Peanut implements Contract {
     }
 
      
-    public void climb(String item) {
-        System.out.println("You climbed on top of the " + item + ".");
-    }
-
-     
-    public void bite(String item) {
-        System.out.println("You bit into the " + item + ".");
-    }
-
-     
-    public void attack(String item) {
-        System.out.println("You attacked " + item + "! You're so strong!");
+    public void climb() {
+        System.out.println("You climb to the highest point that you can see.");
     }
 
      
@@ -149,21 +120,18 @@ public class Peanut implements Contract {
     }
 
      
-    public boolean jump(int x, int y) {
-        System.out.println("You jumped to (" + x + ", " + y + ").");
-        return true;
-    }
-
-     
-    public Number eat() {
+    public void eat() {
         System.out.println("You ate a tasty treat.");
-        return 1; // Placeholder return
+
     }
 
      
-    public Number poop() {
+    public void poop() {
+        System.out.println("Please pause...");
+        System.out.println();
+        System.out.println();
         System.out.println("You pooped.");
-        return 1; // Placeholder return
+        System.out.println(" You may continue now.");
     }
 
      
@@ -174,11 +142,6 @@ public class Peanut implements Contract {
      
     public void undo() {
         System.out.println("Undoing last action.");
-    }
-
-     
-    public void solvePuzzle(String puzzleName, String solution) {
-        System.out.println("You solved the " + puzzleName + " puzzle with " + solution + "! Great job!");
     }
 
      

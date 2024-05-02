@@ -7,17 +7,13 @@ public interface Contract {
     void sniff(String item);
     void drink();
     boolean roll(int x, int y);
-    void climb(String item);
-    void bite(String item);
-    void attack(String item);
+    void climb();
     void use(String item);
     boolean scurry(String direction);
-    boolean jump(int x, int y);
-    Number eat();
-    Number poop();
+    void eat();
+    void poop();
     void snooze();
     void undo();
-    void solvePuzzle(String puzzleName, String solution);
     void unlockRoom();
     void quitGame();
 }
