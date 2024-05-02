@@ -94,7 +94,7 @@ public void navigateTunnels() {
     
     int currentTunnel = 0; // Starting at Tunnel 1
 
-    System.out.println("Help the gerbil find the exit of this Under-The-Bed Tunnel Network!");
+    System.out.println("Help the gerbil find its way out of these tunnels! Dont want to miss the graduation ceremony!");
     while (!tunnels.get(currentTunnel).equals("Exit Tunnel")) {
         System.out.println("You are in " + tunnels.get(currentTunnel) + ". There are exits to the following tunnels:");
 
@@ -112,7 +112,7 @@ public void navigateTunnels() {
         }
     }
 
-    System.out.println("Congratulations! You've helped the gerbil find the exit of this Under-The-Bed Tunnel Network.");
+    System.out.println("Congratulations! You have escaped the tunnels!");
     scanner.close();
 }
 
