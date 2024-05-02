@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Peanut implements Contract {
 
-    private List<String> inventory = new ArrayList<>();
+    List<String> inventory = new ArrayList<>();
 
      
     public void startGame() {
