@@ -5,8 +5,8 @@ public class Room {
     
     public Room(String name, boolean isLocked, Puzzle puzzle) {
         this.name = name;
-        isLocked = true;
-        puzzle = null;
+        this.isLocked = isLocked;
+        this.puzzle = puzzle;
     }
     
     // Getters and setters for description, isLocked, and puzzle

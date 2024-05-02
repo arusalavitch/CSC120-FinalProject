@@ -5,32 +5,37 @@ import java.util.Scanner;
 
 public class Peanut implements Contract {
 
-    List<String> inventory = new ArrayList<>();
+    private List<String> inventory = new ArrayList<>();
 
      
     public void startGame() {
         System.out.println("----------------------------------------");
         System.out.println("----------------------------------------");
-        System.out.println("Welcome to Peanut's Adventure!");
-        System.out.println( "Your name is Peanut, you are a gerbil who has been living in the dorm room of a college student for a long four years.");
-        System.out.println("Over the last few week, as your owner gears up for graduation, you have realized that you may never get the chance to see outside into the world of Smith College ever again.");
-        System.out.println("Tired of the monotony of cage life, you hatch a plan to escape and explore the world beyond your cage.");
+        System.out.println("Welcome to Peanut's Adventure! \n");
+        System.out.println( "Your name is Peanut, you are a gerbil who has been living in the dorm room of a college student for a long four years. \n");
+        System.out.println("Over the last few week, as your owner gears up for graduation, you have realized that you may never get the chance to see outside into the world of Smith College ever again. \n");
+        System.out.println("Tired of the monotony of cage life, you hatch a plan to escape and explore the world beyond your cage. \n");
         System.out.println("Your objective is to break out of the cage and explore, solving puzzles, overcoming obstacles, and finding a way to freedom.");
-        System.out.println("Get ready to navigate through various challenges and puzzles as you embarks on a daring adventure to explore Smith College!!");
+        System.out.println("Get ready to navigate through various challenges and puzzles as you embarks on a daring adventure to explore Smith College!! \n");
     }
 
-    public void grab (String item) {
-        System.out.println("Your tiny paws grabbed the " + item + ".");
-        inventory.add(item);
-    }
+    List<String> allowedItems = Arrays.asList("food", "bedding", "treats", "toy");
 
-     
-    public String drop(String item) {
-        if (inventory.contains(item)) {
-            inventory.remove(item);
-            return item;
+    public void grab(String item) {
+        if (allowedItems.contains(item.toLowerCase())) {
+            System.out.println("Your tiny paws grab the " + item + ".");
+            inventory.add(item);
         } else {
-            return null;
+            System.out.println("You can't grab that. It's not something a gerbil would grab. Try grabbing 'food', 'bedding', 'treats' or 'toy'. \n");
+        }
+    }
+
+    public String drop(String item) {
+        if (inventory.contains(item) && allowedItems.contains(item.toLowerCase())) {
+            inventory.remove(item);
+            return("You dropped the " + item + ".");
+        } else {
+            return("You don't have " + item + " in your inventory.");
         }
     }
 
@@ -38,28 +43,28 @@ public class Peanut implements Contract {
     public void sniff(String item) {
         List<String> allowedItems = Arrays.asList("food", "bedding", "treats", "toy");
         if (allowedItems.contains(item.toLowerCase())) {
-            System.out.println("You sniffed the " + item + ".");
+            System.out.println("You sniffed the " + item + ". \n");
         } else {
-            System.out.println("You can't sniff that. It's not something a gerbil would sniff.");
+            System.out.println("You can't sniff that. It's not something a gerbil would sniff. Try sniffing 'food', 'bedding', 'treats' or 'toy'. \n");
         }
     }
     
 
      
     public void drink() {
-        System.out.println("You took a sip of water.");
+        System.out.println("You took a sip of water. \n");
     }
 
      
     public boolean roll(int x, int y) {
         if (x == 10 && y == 10) {
-            System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + ").");
-            System.out.println("You've rolled directly in front of the puzzle!! What luck!");
-            System.out.println("Would you like to solve the puzzle now? Enter 'yes' to solve or 'no' to continue exploring.");
+            System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + "). \n");
+            System.out.println("You've rolled directly in front of the puzzle!! What luck! \n");
+            System.out.println("Would you like to solve the puzzle now? Enter 'yes' to solve or 'no' to continue exploring. \n");
             Scanner scanner = new Scanner(System.in);
             String choice = scanner.nextLine().toLowerCase();
             if (choice.equalsIgnoreCase("yes")) {
-                System.out.println("Select 'solve' when it prompts you next!");
+                System.out.println("Select 'solve' when it prompts you next! \n");
                 scanner.close();
                 return true;
             } else if (choice.equalsIgnoreCase("no")) {
@@ -72,7 +77,7 @@ public class Peanut implements Contract {
                 return false;
             }
         } else if (x > 10 || y > 10) {
-            System.out.println("Ouch! You hit a wall or cannot roll that far.");
+            System.out.println("Ouch! You hit a wall or cannot roll that far.\n");
             return false;
         } else {
             System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + ").");
@@ -84,7 +89,7 @@ public class Peanut implements Contract {
 
      
     public void climb() {
-        System.out.println("You climb to the highest point that you can see.");
+        System.out.println("You climb to the highest point that you can see.\n");
     }
 
      
@@ -95,15 +100,13 @@ public class Peanut implements Contract {
 
      
     public void eat() {
-        System.out.println("Pause, please. You're getting hungry.");
+        System.out.println("Pause, please. You're getting hungry.\n \n \n \n");
         System.out.println("You find nut and have a tasty treat.");
     }
 
      
     public void poop() {
-        System.out.println("Please pause...");
-        System.out.println();
-        System.out.println();
+        System.out.println("Please pause... \n \n \n \n");
         System.out.println("You pooped.");
         System.out.println(" You may continue now.");
     }
