@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Peanut implements Contract {
 
@@ -34,8 +36,14 @@ public class Peanut implements Contract {
 
      
     public void sniff(String item) {
-        System.out.println("You sniffed the " + item + ".");
+        List<String> allowedItems = Arrays.asList("food", "bedding", "treats", "toy");
+        if (allowedItems.contains(item.toLowerCase())) {
+            System.out.println("You sniffed the " + item + ".");
+        } else {
+            System.out.println("You can't sniff that. It's not something a gerbil would sniff.");
+        }
     }
+    
 
      
     public void drink() {
@@ -44,9 +52,35 @@ public class Peanut implements Contract {
 
      
     public boolean roll(int x, int y) {
-        System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + ").");
-        return true;
+        if (x == 10 && y == 10) {
+            System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + ").");
+            System.out.println("You've rolled directly in front of the puzzle!! What luck!");
+            System.out.println("Would you like to solve the puzzle now? Enter 'yes' to solve or 'no' to continue exploring.");
+            Scanner scanner = new Scanner(System.in);
+            String choice = scanner.nextLine().toLowerCase();
+            if (choice.equalsIgnoreCase("yes")) {
+                System.out.println("Select 'solve' when it prompts you next!");
+                scanner.close();
+                return true;
+            } else if (choice.equalsIgnoreCase("no")) {
+                System.out.println("You decide to continue exploring.");
+                scanner.close();
+                return true;
+            } else {
+                System.out.println("Invalid choice. Please enter 'yes' or 'no'.");
+                scanner.close();
+                return false;
+            }
+        } else if (x > 10 || y > 10) {
+            System.out.println("Ouch! You hit a wall or cannot roll that far.");
+            return false;
+        } else {
+            System.out.println("You stopped, dropped, and rolled to (" + x + ", " + y + ").");
+            return true;
+        }
     }
+    
+    
 
      
     public void climb() {
@@ -57,17 +91,12 @@ public class Peanut implements Contract {
     public void use(String item) {
         System.out.println("You used the " + item + ".");
     }
-
-     
-    public boolean scurry(String direction) {
-        System.out.println("You scurried " + direction + ".");
-        return true;
-    }
+    
 
      
     public void eat() {
-        System.out.println("You ate a tasty treat.");
-
+        System.out.println("Pause, please. You're getting hungry.");
+        System.out.println("You find nut and have a tasty treat.");
     }
 
      

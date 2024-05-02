@@ -8,7 +8,6 @@ public interface Contract {
     boolean roll(int x, int y);
     void climb();
     void use(String item);
-    boolean scurry(String direction);
     void eat();
     void poop();
     void snooze();
