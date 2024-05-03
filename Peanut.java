@@ -85,12 +85,12 @@ public class Peanut {
      
     public void eatAnnoy() {
         System.out.println("\nPause, please. You're getting hungry.\n \n \n \n");
-        System.out.println("\nYou find nut and have a tasty treat.");
+        System.out.println("\nYou find a nut and have a tasty treat.");
     }
 
     public void eat(){
     System.out.println("\nYou look around for something to eat...");
-    System.out.println("\nYou find nut and have a tasty treat.");
+    System.out.println("\nYou find an almond and have a tasty treat.");
     }
 
     public void poop() {
