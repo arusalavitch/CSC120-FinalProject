@@ -358,7 +358,8 @@ public class Controller {
                                 System.out.println("You engage in a fierce battle with the squirrel!");
                                 System.out.println("Unfortunately, the squirrel overwhelms you and you lose the fight...");
                                 System.out.println("GAME OVER");
-                                return; // End the game
+                                peanut.quitGame();
+                                return;
                             } else if (fightChoice.equalsIgnoreCase("no")) {
                                 System.out.println("You wisely decide to retreat from the squirrel.");
                                 System.out.println("What would you like to do next?");
@@ -378,6 +379,7 @@ public class Controller {
                                         System.out.println("You investigate behind the Campus Center and discover hidden tunnels!");
                                         System.out.println("These tunnels lead directly to the quad. You've found your way to graduation!");
                                         puzzleCampusSolved = true;
+                                        peanut.poop();
                                         peanut.quitGame();
                                     } else if (investigateChoice.equalsIgnoreCase("no")) {
                                         System.out.println("You decide not to investigate and continue exploring.");
@@ -404,6 +406,8 @@ public class Controller {
                                         break;
                                     } else if (investigateSeeleyeChoice.equalsIgnoreCase("no")) {
                                         System.out.println("You decide not to investigate and continue exploring.");
+                                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                                        responseCampus = sc.nextLine();
                                     } else {
                                         System.out.println("Invalid choice. Please enter 'yes' or 'no'.");
                                     }
@@ -413,6 +417,8 @@ public class Controller {
                                 case "dormitory":
                                     System.out.println("You climb to the top of the " + buildingChoice + " and enjoy the view.");
                                     System.out.println("However, you don't find anything particularly interesting.");
+                                    System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                                    responseCampus = sc.nextLine();
                                     break;
                                 default:
                                     System.out.println("Invalid choice. Please choose one of the available buildings.");
@@ -426,7 +432,6 @@ public class Controller {
                         System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
-                        peanut.eat();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCampus = sc.nextLine();
                         break;

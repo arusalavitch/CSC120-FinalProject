@@ -171,5 +171,7 @@ public class Peanut {
      
     public void quitGame() {
         System.out.println("\nQuitting the game. Goodbye!");
+        System.exit(0);
     }
+    
 }
