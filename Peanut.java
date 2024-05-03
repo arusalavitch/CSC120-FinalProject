@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Peanut implements Contract {
+public class Peanut {
 
     private List<String> inventory = new ArrayList<>();
 
@@ -132,6 +132,41 @@ public class Peanut implements Contract {
     public void HELP(){
         System.out.println("\nPossible commands Peanut can use: \ngrab \ndrop \nsniff \ndrink \nroll \nclimb \nuse \nsnooze \nundo \n");
     }
+
+    public void attack(String enemy) {
+        switch (enemy.toLowerCase()) {
+            case "mouse":
+                System.out.println("\nYou encounter a mouse!");
+                System.out.println("Do you want to attack the mouse? (yes/no)");
+                Scanner scanner = new Scanner(System.in);
+                String choice = scanner.nextLine().toLowerCase();
+                if (choice.equals("yes")) {
+                    System.out.println("You bravely attack the mouse and scare it away!");
+                } else {
+                    System.out.println("You choose not to attack the mouse and cautiously retreat.");
+                }
+                break;
+            case "squirrel":
+                System.out.println("\nYou encounter a squirrel!");
+                System.out.println("Do you want to attack the squirrel? (yes/no)");
+                Scanner squirrelScanner = new Scanner(System.in);
+                String squirrelChoice = squirrelScanner.nextLine().toLowerCase();
+                if (squirrelChoice.equals("yes")) {
+                    System.out.println("You engage in a fierce battle with the squirrel!");
+                    System.out.println("Unfortunately, the squirrel is too powerful and you are defeated...");
+                    System.out.println("Game over. Better luck next time!");
+                    quitGame();
+                } else {
+                    System.out.println("You choose not to attack the squirrel and cautiously retreat.");
+                }
+                break;
+            default:
+                System.out.println("\nYou encounter an unknown enemy!");
+                System.out.println("You cautiously observe the enemy but choose not to engage.");
+                break;
+        }
+    }
+    
 
      
     public void quitGame() {
