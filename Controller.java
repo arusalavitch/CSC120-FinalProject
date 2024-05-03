@@ -61,7 +61,7 @@ public class Controller {
                         System.out.println("\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         if (droppedItem != null) {
                             System.out.println(droppedItem + " has been dropped from your inventory.");
                         } else {
@@ -80,7 +80,7 @@ public class Controller {
                         break;
                     case "drink":
                         peanut.drink();
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
@@ -105,7 +105,7 @@ public class Controller {
                             puzzleCage.wheel();
                             cage.setLocked(false);
                             puzzleCageSolved = true;
-                            peanut.eat();
+                            peanut.eatAnnoy();
                             System.out.println("Congratulations! You solved the puzzle and unlocked the cage!\n");
                         } else if (response4.equalsIgnoreCase("Cage")) {
                             System.out.println("You decide to explore more of the cage.");
@@ -117,13 +117,13 @@ public class Controller {
                         System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     case "snooze":
                         peanut.snooze();
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
@@ -142,6 +142,11 @@ public class Controller {
                     case "help":
                         peanut.HELP();
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseCage = sc.nextLine();
+                        break;
+                    case "eat":
+                        peanut.eat();
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCage = sc.nextLine();
                         break;
                     default:
@@ -190,7 +195,7 @@ public class Controller {
                         System.out.println("\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         if (droppedItem != null) {
                             System.out.println(droppedItem + " has been dropped from your inventory.");
                         } else {
@@ -209,7 +214,7 @@ public class Controller {
                         break;
                     case "drink":
                         peanut.drink();
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseDorm = sc.nextLine();
                         break;
@@ -239,13 +244,13 @@ public class Controller {
                         System.out.println( "\nWhat would you like to use?");
                         String itemToUse = sc.nextLine();
                         peanut.use(itemToUse);
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseDorm = sc.nextLine();                    
                         break;
                     case "snooze":
                         peanut.snooze();
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");             
                         responseDorm = sc.nextLine();
                         break;
@@ -266,6 +271,11 @@ public class Controller {
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseDorm = sc.nextLine();
                         break;
+                    case "eat":
+                        peanut.eat();
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseDorm = sc.nextLine();
+                        break;
                     default:
                         System.out.println("\nPlease check your spelling and capitalization. "+responseDorm+" isn't something that you know how to do.\n");
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
@@ -280,19 +290,17 @@ public class Controller {
 }
 
     private static void campusSection(Scanner sc) {
-        System.out.println("You've entered SMITH COLLEGE CAMPUS. Now to find your way to the quad for graduation!");
+        System.out.println("You've entered SMITH COLLEGE CAMPUS. Now to find your way to the quad for graduation! \nYour goal is to climb on top of as many things as possible until you can find your way there!");
         System.out.println(campus.getDescription());
         System.out.println(campus.isLocked());
 
         commands.add("grab");
         commands.add("drop");
+        commands.add("eat");
         commands.add("sniff");
         commands.add("drink");
         commands.add("roll");
         commands.add("climb");
-        commands.add("use");
-        commands.add("snooze");
-        commands.add("undo");
         commands.add("HELP");
         commands.add("attack");
 
@@ -314,12 +322,17 @@ public class Controller {
                         System.out.println("\nWhat do you want to drop from your inventory?");
                         String itemToDrop = sc.nextLine();
                         String droppedItem = peanut.drop(itemToDrop);
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         if (droppedItem != null) {
                             System.out.println(droppedItem + " has been dropped from your inventory.");
                         } else {
                             System.out.println("You don't have " + itemToDrop + " in your inventory.");
                         }
+                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                        responseCampus = sc.nextLine();
+                        break;
+                case "eat":
+                        peanut.eat();
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCampus = sc.nextLine();
                         break;
@@ -333,7 +346,7 @@ public class Controller {
                         break;
                 case "drink":
                         peanut.drink();
-                        peanut.eat();
+                        peanut.eatAnnoy();
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCampus = sc.nextLine();
                         break;
@@ -347,7 +360,7 @@ public class Controller {
                         responseCampus = sc.nextLine();
                         break;
                 case "climb":
-                        System.out.println("What would you like to climb? \n You can say things like 'building', 'tree'");
+                        System.out.println("What would you like to climb? \nYou can say things like 'building', 'tree'");
                         String toClimb = sc.nextLine();
                         if (toClimb.equalsIgnoreCase("tree")) {
                             System.out.println("You start climbing the nearest tree...");
@@ -361,13 +374,13 @@ public class Controller {
                                 peanut.quitGame();
                                 return;
                             } else if (fightChoice.equalsIgnoreCase("no")) {
-                                System.out.println("You wisely decide to retreat from the squirrel.");
+                                System.out.println("You wisely decide to retreat away from the squirrel.");
                                 System.out.println("What would you like to do next?");
                             } else {
                                 System.out.println("Invalid choice. Please enter 'yes' or 'no'.");
                             }
                         } else if (toClimb.equalsIgnoreCase("building")) {
-                            System.out.println("Which building would you like to climb? You can choose from: Campus Center, Seeleye, Library, Science Center, Dormitory");
+                            System.out.println("Which building would you like to climb? You can choose from: Campus Center, Seeleye, Nielson, Sabin Reed, Bass");
                         
                             String buildingChoice = sc.nextLine();
                             switch (buildingChoice.toLowerCase()) {
@@ -383,6 +396,8 @@ public class Controller {
                                         peanut.quitGame();
                                     } else if (investigateChoice.equalsIgnoreCase("no")) {
                                         System.out.println("You decide not to investigate and continue exploring.");
+                                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
+                                        responseCampus = sc.nextLine();
                                     } else {
                                         System.out.println("Invalid choice. Please enter 'yes' or 'no'.");
                                     }
@@ -399,7 +414,7 @@ public class Controller {
                                         if (puzzleCampus.isSolved) {
                                             System.out.println("Congratulations! You've navigated through the tunnels and escaped from the campus!");
                                             puzzleCampusSolved = true;
-                                            peanut.eat();
+                                            peanut.eatAnnoy();
                                         } else {
                                             System.out.println("You failed to navigate through the tunnels. Try again!");
                                         }     
@@ -412,9 +427,9 @@ public class Controller {
                                         System.out.println("Invalid choice. Please enter 'yes' or 'no'.");
                                     }
                                     break;
-                                case "library":
-                                case "science center":
-                                case "dormitory":
+                                case "nielson":
+                                case "sabin reed":
+                                case "bass":
                                     System.out.println("You climb to the top of the " + buildingChoice + " and enjoy the view.");
                                     System.out.println("However, you don't find anything particularly interesting.");
                                     System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
@@ -427,19 +442,6 @@ public class Controller {
                         } else {
                             System.out.println("Invalid choice. Please choose 'building' or 'tree'.");
                         }
-                        break;
-                    case "use":
-                        System.out.println( "\nWhat would you like to use?");
-                        String itemToUse = sc.nextLine();
-                        peanut.use(itemToUse);
-                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
-                        responseCampus = sc.nextLine();
-                        break;
-                    case "snooze":
-                        peanut.snooze();
-                        peanut.eat();
-                        System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
-                        responseCampus = sc.nextLine();
                         break;
                     case "undo":
                         peanut.undo();

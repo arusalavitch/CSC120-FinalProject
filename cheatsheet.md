@@ -31,6 +31,6 @@ Challenges:
         - This puzzle has a series of directions that need to be taken in order to successfully make it through : ("right", "left", "left", "right")
 
     If gerbil escapes from the dorm room and command solve is implemented:
-        - Gerbil has to complete the final puzzle to successfully win the game: Tunnel Puzzel
+        - Gerbil has to complete the final puzzle to successfully win the game: Tunnel Puzzle
         - Once this puzzle is solved, the Gerbil has successfully escaped campus and won the game!
     
