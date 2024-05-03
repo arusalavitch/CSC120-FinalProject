@@ -60,26 +60,7 @@ public class Peanut {
 
      
     public boolean roll(int x, int y) {
-        if (x == 10 && y == 10) {
-            System.out.println("\nYou stopped, dropped, and rolled to (" + x + ", " + y + "). \n");
-            System.out.println("\nYou've rolled directly in front of the puzzle!! What luck! \n");
-            System.out.println("\nWould you like to solve the puzzle now? Enter 'yes' to solve or 'no' to continue exploring. \n");
-            Scanner scanner = new Scanner(System.in);
-            String choice = scanner.nextLine().toLowerCase();
-            if (choice.equalsIgnoreCase("yes")) {
-                System.out.println("\nSelect 'solve' when it prompts you next! \n");
-                scanner.close();
-                return true;
-            } else if (choice.equalsIgnoreCase("no")) {
-                System.out.println("\nYou decide to continue exploring.");
-                scanner.close();
-                return true;
-            } else {
-                System.out.println("\nInvalid choice. Please enter 'yes' or 'no'.");
-                scanner.close();
-                return false;
-            }
-        } else if (x > 10 || y > 10) {
+        if (x > 10 || y > 10) {
             System.out.println("\nOuch! You hit a wall or cannot roll that far.\n");
             return false;
         } else {
