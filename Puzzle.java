@@ -4,6 +4,7 @@ import java.util.*;
 public class Puzzle {
 
     public boolean isSolved;
+    Peanut peanut = new Peanut();
 
 
     public boolean setSolved(boolean done){
@@ -88,13 +89,14 @@ public void navigateTunnels() {
     System.out.println("Help the gerbil find its way out of these tunnels! Dont want to miss the graduation ceremony!");
     while (!tunnels.get(currentTunnel).equals("Exit Tunnel")) {
         System.out.println("You are in " + tunnels.get(currentTunnel) + ". There are exits to the following tunnels:");
-
+        peanut.attack("mouse");
         for (int exit : exits[currentTunnel]) {
             System.out.println((exit + 1) + ": " + tunnels.get(exit));
         }
 
         System.out.print("Which tunnel do you want to enter? Choose a number: ");
         int choice = scanner.nextInt() - 1; // Convert to 0-based index
+        peanut.attack("mouse");
 
         if (choice >= 0 && contains(exits[currentTunnel], choice)) {
             currentTunnel = choice;

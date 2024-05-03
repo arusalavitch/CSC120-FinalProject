@@ -350,12 +350,11 @@ public class Controller {
                         System.out.println( "\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCampus = sc.nextLine();
                         break;
-                        case "roll":
+                case "roll":
                         System.out.println("Enter x coordinate: ");
                         int xCoord = sc.nextInt();
                         System.out.println("Enter y coordinate: ");
                         int yCoord = sc.nextInt();
-                        sc.nextLine();
                         peanut.roll(xCoord, yCoord);
                         System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                         responseCampus = sc.nextLine();
