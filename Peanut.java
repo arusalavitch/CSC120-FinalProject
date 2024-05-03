@@ -89,7 +89,7 @@ public class Peanut {
     }
 
     public void eat(){
-    System.out.println("\nPeanut looks around for something to eat...");
+    System.out.println("\nYou look around for something to eat...");
     System.out.println("\nYou find nut and have a tasty treat.");
     }
 
