@@ -15,20 +15,18 @@ public class Controller {
     static ArrayList<String> commands = new ArrayList<String>();
 
     public static void main(String[] args) {
-        Scanner sc_cage = new Scanner(System.in);
-        Scanner sc_dorm = new Scanner(System.in);
-        Scanner sc_campus = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         peanut.startGame();
 
-        cageSection(sc_cage);
+        cageSection(sc);
 
-        dormSection(sc_dorm);
+        dormSection(sc);
 
-        campusSection(sc_campus);
+        campusSection(sc);
 
         System.out.println("You've successfully escaped from the campus!");
         peanut.quitGame();
-        sc_cage.close();
+        sc.close();
     }
 
     private static void cageSection(Scanner sc_cage) {
