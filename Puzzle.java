@@ -19,7 +19,7 @@ public void maze() {
         Scanner input = new Scanner(System.in);
 
         while (maze_position < directions.length) {
-            System.out.println("Where does the gerbil want to go? Left or right?");
+            System.out.println("Where do you want to go? Left or right?");
             String direction = input.nextLine();
             if (direction.equalsIgnoreCase(directions[maze_position])) {
                 maze_position++;
@@ -42,8 +42,9 @@ public void wheel() {
     Scanner scanner = new Scanner(System.in);
     int goalRotations = 5; // The wheel needs 5 clockwise rotations to open the door
     int currentRotations = 0;
+    boolean wheelStuck = false;
 
-    System.out.println("Help the gerbil open the door by rotating the wheel!");
+    System.out.println("Open the door by rotating the wheel!");
     System.out.println("Spin the wheel 5 times to unlock the door.");
 
     while (currentRotations < goalRotations) {
@@ -53,17 +54,51 @@ public void wheel() {
         if (direction.equalsIgnoreCase("clockwise")) {
             currentRotations++;
             System.out.println("Good! " + (goalRotations - currentRotations) + " more rotations needed.");
+            if (currentRotations == goalRotations - 1) {
+                wheelStuck = true;
+                break;
+            }
         } else if (direction.equalsIgnoreCase("counterclockwise")) {
             currentRotations = Math.max(0, currentRotations - 1); // Prevent negative rotations
             System.out.println("Oh no! The wheel moved in the wrong direction. Now you need " +
-                               (goalRotations - currentRotations) + " more rotations.");
+                               (goalRotations - currentRotations) + " more rotations.\n");
+            
         } else {
-            System.out.println("Invalid input. Please enter 'clockwise' or 'counterclockwise'.");
+            System.out.println("Invalid input. Please enter 'clockwise' or 'counterclockwise'.\n");
         }
     }
 
-    System.out.println("Congratulations! The door is unlocked, and the gerbil can escape.");
-    scanner.close();
+    if (wheelStuck) {
+        System.out.println("Oh no!! \nThe wheel gets caught on the last rotation and you're too tired to push through!");
+        System.out.println("You need to eat to gain strength before trying again. \n");
+
+        boolean hasEaten = false;
+        while (!hasEaten) {
+            System.out.print("What would you like to do next? ");
+            String action = scanner.nextLine();
+            if (action.equalsIgnoreCase("eat")) {
+                System.out.println("\nYou look around for something to eat...");
+                System.out.println("\nYou find a nut and have a tasty treat.");
+                System.out.println("Time for the last push! You hop on the wheel one last time.");
+                hasEaten = true;
+            } else {
+                System.out.println("Invalid input. Please check your campitalization and enter 'eat'.\n");
+            }
+        }
+      
+        System.out.print("Enter rotation direction ('clockwise' or 'counterclockwise'): ");
+        String direction = scanner.nextLine();
+    
+            if (direction.equalsIgnoreCase("clockwise")) {
+                System.out.println("Congratulations!");
+            }else if (direction.equalsIgnoreCase("counterclockwise")) {
+                System.out.println("Oh no! The wheel moved in the wrong direction. Now you need 2 more rotations.\n");
+                
+            } else {
+                System.out.println("Invalid input. Please enter 'clockwise' or 'counterclockwise'.\n");
+            }
+            }
+        scanner.close();
 }
 
 public void navigateTunnels() {
@@ -86,7 +121,7 @@ public void navigateTunnels() {
     
     int currentTunnel = 0; // Starting at Tunnel 1
 
-    System.out.println("Help the gerbil find its way out of these tunnels! Dont want to miss the graduation ceremony!");
+    System.out.println("Find your way out of these tunnels, you don't want to miss the graduation ceremony!");
     while (!tunnels.get(currentTunnel).equals("Exit Tunnel")) {
         System.out.println("You are in " + tunnels.get(currentTunnel) + ". There are exits to the following tunnels:");
         peanut.attack("mouse");

@@ -16,10 +16,8 @@ Possible commands Peanut can use:
     climb();
     use(String item);
     eat();
-    poop();
     snooze();
     undo();
-    unlockRoom();
 
 Challenges:
     If command climb is used while Gerbil is exploring the cage:

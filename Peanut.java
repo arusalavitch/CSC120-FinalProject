@@ -22,14 +22,18 @@ public class Peanut {
         System.out.println("----------------------------------------\n \n");
     }
 
-    List<String> allowedItems = Arrays.asList("food", "bedding", "treats", "toy");
+    List<String> allowedItems = Arrays.asList("food", "bedding", "toy");
 
     public void grab(String item) {
-        if (allowedItems.contains(item.toLowerCase())) {
-            System.out.println("\nYour tiny paws grab the " + item + ".");
-            inventory.add(item);
+        if (!inventory.contains(item)) {
+            if (allowedItems.contains(item.toLowerCase())) {
+                System.out.println("\nYour tiny paws grab the " + item + ".");
+                inventory.add(item);
+            }else{
+                System.out.println("\nYou can't grab that. \nIt's not something a gerbil would grab. Try grabbing 'food', 'bedding' or 'toy'. \n");
+            }
         } else {
-            System.out.println("\nYou can't grab that. It's not something a gerbil would grab. Try grabbing 'food', 'bedding', 'treats' or 'toy'. \n");
+            System.out.println("\nYou can't grab that. \nIt's already in your inventory. \n");
         }
     }
 
@@ -44,11 +48,11 @@ public class Peanut {
 
      
     public void sniff(String item) {
-        List<String> allowedItems = Arrays.asList("food", "bedding", "treats", "toy");
+        List<String> allowedItems = Arrays.asList("food", "bedding", "toy");
         if (allowedItems.contains(item.toLowerCase())) {
             System.out.println("\nYou sniffed the " + item + ". \n");
         } else {
-            System.out.println("\nYou can't sniff that. It's not something a gerbil would sniff. Try sniffing 'food', 'bedding', 'treats' or 'toy'. \n");
+            System.out.println("\nYou can't sniff that. It's not something a gerbil would sniff. Try sniffing 'food', 'bedding' or 'toy'. \n");
         }
     }
     
@@ -89,8 +93,13 @@ public class Peanut {
     }
 
     public void eat(){
-    System.out.println("\nYou look around for something to eat...");
-    System.out.println("\nYou find an almond and have a tasty treat.");
+        if (inventory.contains("food")) {
+            System.out.println("\nYou look around for something to eat...");
+            System.out.println("\nYou find a nut and have a tasty treat.");
+        } else {
+                System.out.println("You don't have any food in your inventory to eat.");
+        }
+    
     }
 
     public void poop() {
@@ -101,7 +110,11 @@ public class Peanut {
 
      
     public void snooze() {
-        System.out.println("\nYou took a little snooze in your den.");
+        if (inventory.contains("bedding")){
+            System.out.println("You take a little snooze in your den.");
+        } else {
+            System.out.println("You need bedding in your inventory to snooze.");
+        }
     }
 
      

@@ -16,9 +16,9 @@ public class Room {
     
     public String isLocked() {
         if (isLocked){
-            return "The "+name+ " is currently locked.";
+            return "The "+name+ " is LOCKED.";
         }else{
-            return "You've unlocked the "+name+".";
+            return "You've UNLOCKED the "+name+"!!";
         }
     }
     
