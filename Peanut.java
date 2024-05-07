@@ -94,8 +94,8 @@ public class Peanut {
 
     public void eat(){
         if (inventory.contains("food")) {
-            System.out.println("\nYou look around for something to eat...");
-            System.out.println("\nYou find a nut and have a tasty treat.");
+            System.out.println("\nYou look in your cheek for something to eat...");
+            System.out.println("\nYou find a seed and have a tasty treat.");
         } else {
                 System.out.println("You don't have any food in your inventory to eat.");
         }

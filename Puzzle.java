@@ -24,13 +24,16 @@ public void maze() {
             if (direction.equalsIgnoreCase(directions[maze_position])) {
                 maze_position++;
                 if (maze_position < directions.length) {
-                    System.out.println("Good choice, you have made it to the next intersection");
+                    System.out.println("Good choice, you have made it to the next intersection.");
                 } else {
                     System.out.println("Congrats! You have made it to the end of the maze! You found a piece of cheese!");
                     // Implement the inventory method here to add cheese:
                 }
-            } else {
-                System.out.println("Oops! Wrong way. Try again!");
+            } else if(maze_position>2){
+                peanut.attack("mouse");
+                System.out.println("Try again!");
+            }else{
+                System.out.println("Wrong way! Try again please.");
             }
         }
 
