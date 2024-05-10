@@ -1,34 +1,30 @@
-This file will contain documentation for all commands available in your game.
+## Available Commands: 
 
-Note:  It's a good idea to also make this list available inside the game, in response to a `HELP` command.
+grab: Allows the player to grab an item.
+drop: Lets the player drop an item from their inventory.
+eat: Allows the player to eat something.
+sniff: Enables the player to sniff something.
+drink: Allows the player to drink something.
+roll: Initiates rolling with specified coordinates.
+climb: Allows the player to climb on buildings or trees.
+undo: Undoes the last action.
+help: Provides help information.
 
 
-# SPOILER ALERT
+## Description of Physical Layout: 
 
-If your game includes challenges that must be overcome to win, also list them below.
+The game world consists of three main areas: Cage Room, Dorm Room, and Smith College Campus.
 
-Possible commands Peanut can use:
-    grab(String item);
-    drop(String item);
-    sniff(String item);
-    drink();
-    roll(int x, int y);
-    climb();
-    use(String item);
-    eat();
-    snooze();
-    undo();
+Cage Room:
+A small confined space with a locked cage.
+Puzzle involves solving a maze to unlock the cage.
+Dorm Room:
+A typical dormitory room with various objects.
+Puzzle involves exploring the room and interacting with objects to find clues.
+Smith College Campus:
+A larger area with multiple buildings and outdoor spaces.
+Puzzle involves navigating through buildings and outdoor spaces to find the graduation quad.
 
-Challenges:
-    If command climb is used while Gerbil is exploring the cage:
-        - Gerbil is introduced to the first puzzle that needs to be solved to escape: Cage Door Lock Wheel Puzzle
-        - This puzzle requires the gerbil to spin its wheel 5 times counterclockwise to unlock the lock
-
-    If gerbil escapes the cage and command solve is implemented:
-        - Gerbil is introduced to the second puzzle: Dorm Maze Puzzle
-        - This puzzle has a series of directions that need to be taken in order to successfully make it through : ("right", "left", "left", "right")
-
-    If gerbil escapes from the dorm room and command solve is implemented:
-        - Gerbil has to complete the final puzzle to successfully win the game: Tunnel Puzzle
-        - Once this puzzle is solved, the Gerbil has successfully escaped campus and won the game!
-    
+## Challenges:
+Cage Puzzle: Solve the maze to unlock the cage in the Cage Room.
+Campus Navigation: Find and navigate through secret tunnels to reach the graduation quad on the Smith College Campus.

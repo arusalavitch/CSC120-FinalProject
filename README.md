@@ -13,7 +13,7 @@
     The project was tackled by initially making a basic game plan, and listing out possible ideas, or layouts of the game map. Then files were made for each part of the game, like for each room, puzzle, commands for gerbil, etc. The final part was putting it all together and having each file implement other parts of our main file.  
 
  - What **new thing(s)** did you learn / figure out in completing this project?
-    
+
 
 
  - Is there anything that you wish you had **implemented differently**?
