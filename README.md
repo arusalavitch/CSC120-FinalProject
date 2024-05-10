@@ -29,3 +29,8 @@
 
  
  - _If you worked with a team:_ please comment on how your **team dynamics** influenced your experience working on this project.
+
+
+Design Justification:
+
+We chose our design to mimic an escape the room but based on a gerbil that lives in a dorm room. Our design intiially included a health program where the gerbil had to make smart choices and find food and water in order to keep its health up but we decided this was going to be a bit too complicated with the time we had and we decdied just to focus on getting the puzzles and commands working. Additionally, we were thinking of adding more human interactions and barriers for the gerbil but after running through the game multiple times we realized that having the puzzles was a good enough implementation to keep the player entertained and also keep the code running. Implementing more human interactions would have been not very useful since we would also have to implement a health factor for the gerbil. 
