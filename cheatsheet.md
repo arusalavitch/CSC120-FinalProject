@@ -13,18 +13,16 @@ help: Provides help information.
 
 ## Description of Physical Layout: 
 
-The game world consists of three main areas: Cage Room, Dorm Room, and Smith College Campus.
+The game world consists of three main areas: Cage, Dorm Room, and Smith College Campus.
 
-Cage Room:
-A small confined space with a locked cage.
+Cage:
+A small confined space with a locked.
 Puzzle involves solving a maze to unlock the cage.
+
 Dorm Room:
-A typical dormitory room with various objects.
-Puzzle involves exploring the room and interacting with objects to find clues.
+A typical dorm.
+Puzzle involves exploring the room and getting through the maze under the bed to get out of the room. 
+
 Smith College Campus:
 A larger area with multiple buildings and outdoor spaces.
-Puzzle involves navigating through buildings and outdoor spaces to find the graduation quad.
-
-## Challenges:
-Cage Puzzle: Solve the maze to unlock the cage in the Cage Room.
-Campus Navigation: Find and navigate through secret tunnels to reach the graduation quad on the Smith College Campus.
+Puzzle involves navigating through buildings and outdoor spaces to find the tunnels to the quad.
