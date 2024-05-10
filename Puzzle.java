@@ -85,7 +85,7 @@ public void wheel() {
                 System.out.println("Time for the last push! You hop on the wheel one last time.");
                 hasEaten = true;
             } else {
-                System.out.println("Invalid input. Please check your campitalization and enter 'eat'.\n");
+                System.out.println("Invalid input. Please enter 'eat' to help you gather strength.\n");
             }
         }
       
