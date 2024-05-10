@@ -17,20 +17,9 @@ public class DormRoom extends Room {
         System.out.println(isLocked());
 
         while (puzzleDormRoomSolved != true){
-            System.out.println("\nWhat's next?");
-
-            String responseDorm = null;
-            boolean validInput = false;
-    
-            while (!validInput) {
-                try {
-                    responseDorm = sc_dorm.nextLine().trim().toLowerCase();
-                    validInput = true;
-                } catch (NoSuchElementException e) {
-                    System.out.println("No input found. Please input your response again.");
-                    responseDorm=sc_dorm.nextLine();
-                }
-            }
+            System.out.println("\nWhat would you like to do next?");
+            String responseDorm = sc_dorm.nextLine();
+            
             switch (responseDorm.toLowerCase()) {
                 case "grab":
                     System.out.println( "\nWhat do you want to grab?");
@@ -135,7 +124,7 @@ public class DormRoom extends Room {
         setLocked(false);
         System.out.println(isLocked());
         System.out.println("You've escaped from the dorm room!");
-        sc_dorm.close();
+    
 }
 }
 

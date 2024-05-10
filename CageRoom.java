@@ -129,6 +129,6 @@ public class CageRoom extends Room {
         setLocked(false);
         System.out.println(isLocked());
         System.out.println("You've successfully solved the puzzle and unlocked the cage!");
-        sc_cage.close();
+        
     }
 }
