@@ -23,26 +23,26 @@ YES 2 pts: The project makes effective use of **Java built-in classes** whenever
 
 YES 2 pts: The project's design is **extensible** (i.e. someone else could pick up where you left off, adding on or modifying the game without requiring a total rewrite).
 
-_____ 2 pts: Submission includes an **architecture diagram** describing the relationships between all classes.
+YES 2 pts: Submission includes an **architecture diagram** describing the relationships between all classes.
 
 
 ## General Items (10 pts):
-_____ 4 pts: Program compiles without errors or warnings.
+PART 4 pts: Program compiles without errors or warnings.
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze).
+PART 2 pts: Executes fully & consistently without crashing (exception/freeze).
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+YES 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments.
+      YES Classes & class members all have Javadoc header comments.
 
-      _____ Clear and consistent indentation of bracketed sections.
+      YES Clear and consistent indentation of bracketed sections.
 
-      _____ Adheres to Java conventions on naming & capitalization.
+      YES Adheres to Java conventions on naming & capitalization.
 
-      _____ Methods & variables all have clear and accurate names.
+      YES Methods & variables all have clear and accurate names.
 
-      _____ Methods avoid confusing side effects.
+      Yes Methods avoid confusing side effects.
 
-_____ 1 pt: All required files included with submission (including completed checklist file).
+YES 1 pt: All required files included with submission (including completed checklist file).
 
-_____ 1 pt: `readme.md` contains your reflection on the project and responses to all prompts .
+YES 1 pt: `readme.md` contains your reflection on the project and responses to all prompts .
