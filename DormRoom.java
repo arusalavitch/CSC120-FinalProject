@@ -1,4 +1,3 @@
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class DormRoom extends Room {
@@ -11,8 +10,7 @@ public class DormRoom extends Room {
         this.puzzleDormRoomSolved = false;
     }
 
-    public void enterRoom() {
-        Scanner sc_dorm = new Scanner(System.in);
+    public void enterRoom(Scanner sc_dorm) {
         System.out.println(getDescription());
         System.out.println(isLocked());
 

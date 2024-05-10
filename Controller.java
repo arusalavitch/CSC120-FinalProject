@@ -11,21 +11,23 @@ public class Controller {
     static boolean puzzleCageSolved = false;
     static boolean puzzleDormRoomSolved = false;
     static boolean puzzleCampusSolved = false;
+    static Scanner sc = new Scanner (System.in);
 
     public static void main(String[] args) {
         peanut.startGame();
     
         CageRoom cageRoom = new CageRoom();
-        cageRoom.enterRoom();
+        cageRoom.enterRoom(sc);
     
         DormRoom dormRoom = new DormRoom();
-        dormRoom.enterRoom();
+        dormRoom.enterRoom(sc);
     
         CampusRoom campusRoom = new CampusRoom();
-        campusRoom.enterRoom();
+        campusRoom.enterRoom(sc);
     
         System.out.println("You've successfully escaped from the campus!");
         peanut.quitGame();
+        sc.close();
         }
     }
     

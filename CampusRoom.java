@@ -10,8 +10,7 @@ public class CampusRoom extends Room {
         this.puzzleCampusSolved = false;
     }
 
-    public void enterRoom() {
-        Scanner sc = new Scanner(System.in);
+    public void enterRoom(Scanner sc) {
         System.out.println("You've entered SMITH COLLEGE CAMPUS. Now to find your way to the quad for graduation! \nYour goal is to climb on top of as many things as possible until you can find your way there!");
         System.out.println(getDescription());
         System.out.println(isLocked());
@@ -179,6 +178,5 @@ public class CampusRoom extends Room {
                         responseCampus = sc.nextLine();
                 }
             }
-            sc.close();
         } 
     }

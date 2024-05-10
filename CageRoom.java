@@ -10,8 +10,7 @@ public class CageRoom extends Room {
         this.puzzleCageSolved = false;
     }
 
-    public void enterRoom() {
-        Scanner sc_cage = new Scanner(System.in);
+    public void enterRoom(Scanner sc_cage) {
         System.out.println(getDescription());
         System.out.println(isLocked());
 
