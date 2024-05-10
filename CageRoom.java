@@ -78,8 +78,10 @@ public class CageRoom extends Room {
                 case "roll":
                     System.out.println("Enter x coordinate: ");
                     int xCoord = sc_cage.nextInt();
+                    sc_cage.nextLine(); // Consume the newline character
                     System.out.println("Enter y coordinate: ");
                     int yCoord = sc_cage.nextInt();
+                    sc_cage.nextLine(); // Consume the newline character
                     peanut.roll(xCoord, yCoord);
                     System.out.println("\nWhat would you like to do next? \nPlease enter a new response:");
                     responseCage = sc_cage.nextLine();

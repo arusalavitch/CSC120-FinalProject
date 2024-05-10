@@ -25,6 +25,7 @@ public class CampusRoom extends Room {
      */
     public void enterRoom(Scanner sc) {
         System.out.println("You've entered SMITH COLLEGE CAMPUS. Now to find your way to the quad for graduation! \nYour goal is to climb on top of as many things as possible until you can find your way there!");
+        System.out.println("Be careful, though, you've never been outside a cage before! \nWho knows what dangers are out here!!");
         System.out.println(getDescription());
         System.out.println(isLocked());
 

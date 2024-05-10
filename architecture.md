@@ -1,27 +1,26 @@
 Architecture Diagram:
 
           +-----------------------+
-          |       main.java       | in progress
+          |       Controller.java |  // complete
           +-----------------------+
                    |
           +-----------------------+
-          |      Peanut.java      |  complete
-          |      room.java        |  complete
-          |      object.java      |  incomplete
-          |      puzzle.java      |  complete
-          |      achievement.java |  incomplete
-          |      interaction.java |  incomplete
+          |      Peanut.java      |  // complete
+          |      Room.java        |  // complete
+          |      Puzzle.java      |  // complete
+          |      CageRoom.java    |  // complete
+          |      DormRoom.java    |  // complete
+          |      CampusRoom.java  |  // complete
           +-----------------------+
                    |
           +-----------------------+
-          |       utils.java      |  complete
-          |     constants.java    |  complete
-          |    exceptions.java    |  complete
+          |       Utils.java      |  // complete
+          |     Constants.java    |  // complete
+          |    Exceptions.java    |  // complete
           +-----------------------+
                    |
           +-----------------------+
-          |      rooms.md         |  complete
-          |     puzzles.md        |  complete
-          |      items.md         |  complete
-          |  achievements.md      |  in progress
+          |      rooms.md         |  // complete
+          |      puzzles.md       |  // complete
+          |      cheatsheet.md    |  // complete
           +-----------------------+
